@@ -25,4 +25,4 @@ To Build (via jenkins)::
  # get the source tarball.
  wget -N $SRC_URI -O ~/rpmbuild/SOURCES/haproxy-$SRC_VER.tar.gz
 
- rpmbuild -bb ~/rpmbuild/SPECS/haproxy.spec --define "version $SRC_VER" --define "release 1"
+ rpmbuild -bb ~/rpmbuild/SPECS/haproxy.spec --define "version $SRC_VER" --define "release $BUILD_NUMBER"
