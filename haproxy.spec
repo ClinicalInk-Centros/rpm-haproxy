@@ -32,7 +32,8 @@ handle thousands of simultaneous connections on hundreds of instances without
 risking the system's stability.
 
 %prep
-%setup -q
+#%setup -q
+%setup -n %{name}-%{version}
 
 # We don't want any perl dependecies in this RPM:
 %define __perl_requires /bin/true
