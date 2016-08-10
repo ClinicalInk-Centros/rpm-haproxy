@@ -10,19 +10,19 @@ Build server dependencies::
 
 To Build (via jenkins)::
 
- SRC_VER="1.6.7"
+ SRC_VER="1.6.6"
  SRC_VER_MAJOR="1.6"
  SRC_URI="http://www.haproxy.org/download/$SRC_VER_MAJOR/src/haproxy-$SRC_VER.tar.gz"
- SPEC_URI="https://raw.github.com/ClinicalInk-Centros/rpm-haproxy/master/haproxy.spec"
+
+ SPEC_URI="https://raw.githubusercontent.com/ClinicalInk-Centros/rpm-haproxy/master/haproxy.spec"
 
  # setup the build directory in ~/rpmbuild tree.
  rpmdev-setuptree
 
  # get the spec file.
- wget $SPEC_URI -O ~/rpmbuild/SPECS/haproxy.spec
+ wget -N $SPEC_URI -O ~/rpmbuild/SPECS/haproxy.spec
 
  # get the source tarball.
- wget $SRC_URI -O ~/rpmbuild/SOURCES/haproxy-$SRC_VER.tar.gz
+ wget -N $SRC_URI -O ~/rpmbuild/SOURCES/haproxy-$SRC_VER.tar.gz
 
  rpmbuild -bb ~/rpmbuild/SPECS/haproxy.spec --define "version $SRC_VER" --define "release 1"
-
