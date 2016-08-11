@@ -29,4 +29,4 @@ Jenkins Job::
  rpmbuild -bb ~/rpmbuild/SPECS/haproxy.spec --define "version $SRC_VER" --define "release $BUILD_NUMBER"
  
  # copy the resulting rpms to work directory so jenkins can archive them.
- cp ~/rpmbuild/RPMS/x86_64/*.rpm
+ cp ~/rpmbuild/RPMS/x86_64/*.rpm .
