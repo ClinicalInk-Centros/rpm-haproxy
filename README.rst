@@ -3,12 +3,22 @@ rpm-haproxy
 
 An RPM spec file to build and install the is HAProxy TCP/HTTP reverse proxy.
 
-Build server dependencies::
+# ClinicalInk customized the build flags passed to make for gzip support::
+  %{__make} USE_PCRE=1 DEBUG="" ARCH=%{_target_cpu} TARGET=linux26 USE_PCRE=1 USE_OPENSSL=1 USE_ZLIB=1 USE_CRYPT_H=1 USE_LIBCRYPT=1
+
+
+Build server dependencies
+---------------------------------
+
+::
 
  sudo yum -y install rpmdevtools pcre-devel gcc make openssl-devel
 
 
-Jenkins Job::
+Jenkins Job
+-------------------------------------
+
+::
 
  SRC_VER="1.6.7"
  SRC_VER_MAJOR="1.6"
