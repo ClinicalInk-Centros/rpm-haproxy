@@ -8,7 +8,7 @@ Build server dependencies::
  sudo yum -y install rpmdevtools pcre-devel gcc make openssl-devel
 
 
-To Build (via jenkins)::
+Jenkins Job::
 
  SRC_VER="1.6.7"
  SRC_VER_MAJOR="1.6"
@@ -16,7 +16,8 @@ To Build (via jenkins)::
 
  SPEC_URI="https://raw.githubusercontent.com/ClinicalInk-Centros/rpm-haproxy/master/haproxy.spec"
 
- # setup the build directory in ~/rpmbuild tree.
+ # regenerate rpmbuild tree ~/rpmbuild tree.
+ rm -rf ~/rpmbuild
  rpmdev-setuptree
 
  # get the spec file.
@@ -26,3 +27,6 @@ To Build (via jenkins)::
  wget -N $SRC_URI -O ~/rpmbuild/SOURCES/haproxy-$SRC_VER.tar.gz
 
  rpmbuild -bb ~/rpmbuild/SPECS/haproxy.spec --define "version $SRC_VER" --define "release $BUILD_NUMBER"
+ 
+ # copy the resulting rpms to work directory so jenkins can archive them.
+ cp ~/rpmbuild/RPMS/x86_64/*.rpm
