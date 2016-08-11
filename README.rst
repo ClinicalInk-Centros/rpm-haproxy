@@ -3,8 +3,9 @@ rpm-haproxy
 
 An RPM spec file to build and install the is HAProxy TCP/HTTP reverse proxy.
 
-# ClinicalInk customized the build flags passed to make for gzip support::
-  %{__make} USE_PCRE=1 DEBUG="" ARCH=%{_target_cpu} TARGET=linux26 USE_PCRE=1 USE_OPENSSL=1 USE_ZLIB=1 USE_CRYPT_H=1 USE_LIBCRYPT=1
+ClinicalInk customized the build flags passed to make for gzip support::
+
+ %{__make} USE_PCRE=1 DEBUG="" ARCH=%{_target_cpu} TARGET=linux26 USE_PCRE=1 USE_OPENSSL=1 USE_ZLIB=1 USE_CRYPT_H=1 USE_LIBCRYPT=1
 
 
 Build server dependencies
