@@ -3,7 +3,7 @@ rpm-haproxy
 
 An RPM spec file to build and install the is HAProxy TCP/HTTP reverse proxy.
 
-ClinicalInk customized the build flags passed to make for gzip support::
+Customized the build flags passed to make for gzip support::
 
  %{__make} USE_PCRE=1 DEBUG="" ARCH=%{_target_cpu} TARGET=linux26 USE_PCRE=1 USE_OPENSSL=1 USE_ZLIB=1 USE_CRYPT_H=1 USE_LIBCRYPT=1
 
@@ -21,7 +21,7 @@ Jenkins Job
 
 ::
 
- SRC_VER="1.6.7"
+ SRC_VER="1.6.9"
  SRC_VER_MAJOR="1.6"
  SRC_URI="http://www.haproxy.org/download/$SRC_VER_MAJOR/src/haproxy-$SRC_VER.tar.gz"
 
