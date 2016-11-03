@@ -25,7 +25,7 @@ Jenkins Job
  SRC_VER_MAJOR="1.6"
  SRC_URI="http://www.haproxy.org/download/$SRC_VER_MAJOR/src/haproxy-$SRC_VER.tar.gz"
 
- SPEC_URI="https://raw.githubusercontent.com/ClinicalInk-Centros/rpm-haproxy/master/haproxy.spec"
+ SPEC_URI="https://raw.githubusercontent.com/russellballestrini/rpm-haproxy/master/haproxy.spec"
 
  # regenerate rpmbuild tree ~/rpmbuild tree.
  rm -rf ~/rpmbuild
