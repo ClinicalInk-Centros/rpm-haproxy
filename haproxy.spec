@@ -1,7 +1,7 @@
 Summary: HA-Proxy is a TCP/HTTP reverse proxy for high availability environments
 
 %{!?name: %{!?name: %define name haproxy}}
-%{!?version: %{!?version: %define version 1.6.7}}
+%{!?version: %{!?version: %define version 1.6.9}}
 %{!?release: %{!?release: %define release 1}}
 
 Name: %{name}
@@ -30,6 +30,11 @@ availability environments. Indeed, it can:
 It needs very little resource. Its event-driven architecture allows it to easily
 handle thousands of simultaneous connections on hundreds of instances without
 risking the system's stability.
+
+%pre
+# add user and group is needed.
+getent group %{name} >/dev/null 2>&1 || groupadd -g 188 -r %{name} 2>/dev/null
+getent user %{name} >/dev/null 2>&1 || useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G %{name} -M -r -u 188 %{name} 2>/dev/null
 
 %prep
 #%setup -q
@@ -81,6 +86,9 @@ fi
 %attr(0755,root,root) %config %{_sysconfdir}/rc.d/init.d/%{name}
 
 %changelog
+* Mon May 08 2017 Prakash pagare <ppagare@mobiquityinc.com>
+- create haproxy user group
+
 * Wed Aug 10 2016 Russell Ballestrini <russell@ballestrini.net>
 - allow support for passing version over CLI with --define flag
 
