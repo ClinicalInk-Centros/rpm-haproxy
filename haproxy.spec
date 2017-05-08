@@ -33,8 +33,8 @@ risking the system's stability.
 
 %pre
 # add user and group is needed.
-groupadd -g 188 -r haproxy 2>/dev/null
-useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G haproxy -M -r -u 188 haproxy 2>/dev/null
+groupadd -g 188 -r %{name} 2>/dev/null
+useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G %{name} -M -r -u 188 %{name} 2>/dev/null
 
 %prep
 #%setup -q
