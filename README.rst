@@ -21,7 +21,7 @@ Jenkins Job
 
 ::
 
- SRC_VER="1.6.9"
+ SRC_VER="1.6.12"
  SRC_VER_MAJOR="1.6"
  SRC_URI="http://www.haproxy.org/download/$SRC_VER_MAJOR/src/haproxy-$SRC_VER.tar.gz"
 
