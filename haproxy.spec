@@ -87,6 +87,9 @@ fi
 %attr(0755,root,root) %config %{_sysconfdir}/rc.d/init.d/%{name}
 
 %changelog
+* Mon May 08 2017 Prakash pagare <ppagare@mobiquityinc.com>
+- create haproxy user group
+
 * Wed Aug 10 2016 Russell Ballestrini <russell@ballestrini.net>
 - allow support for passing version over CLI with --define flag
 
