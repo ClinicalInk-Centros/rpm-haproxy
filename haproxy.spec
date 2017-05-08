@@ -31,6 +31,12 @@ It needs very little resource. Its event-driven architecture allows it to easily
 handle thousands of simultaneous connections on hundreds of instances without
 risking the system's stability.
 
+%pre
+# add user and group is needed.
+groupadd -g 188 -r haproxy 2>/dev/null
+useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G haproxy -M -r -u 188 postfix 2>/dev/null
+exit 0
+
 %prep
 #%setup -q
 %setup -n %{name}-%{version}
