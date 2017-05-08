@@ -31,6 +31,12 @@ It needs very little resource. Its event-driven architecture allows it to easily
 handle thousands of simultaneous connections on hundreds of instances without
 risking the system's stability.
 
+%pre
+# add user and group is needed.
+groupadd -g 188 -r haproxy 2>/dev/null
+useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G haproxy -M -r -u 188 postfix 2>/dev/null
+exit 0
+
 %prep
 #%setup -q
 %setup -n %{name}-%{version}
@@ -81,6 +87,9 @@ fi
 %attr(0755,root,root) %config %{_sysconfdir}/rc.d/init.d/%{name}
 
 %changelog
+* Mon May 08 2017 Prakash pagare <ppagare@mobiquityinc.com>
+- create haproxy user group
+
 * Wed Aug 10 2016 Russell Ballestrini <russell@ballestrini.net>
 - allow support for passing version over CLI with --define flag
 
