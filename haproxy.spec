@@ -34,7 +34,7 @@ risking the system's stability.
 %pre
 # add user and group is needed.
 getent group %{name} >/dev/null 2>&1 || groupadd -g 188 -r %{name} 2>/dev/null
-getent user %{name} >/dev/null 2>&1 || useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G %{name} -M -r -u 188 %{name} 2>/dev/null
+getent user %{name} >/dev/null 2>&1 || useradd -d /var/lib/haproxy -s /sbin/nologin -g 188 -G %{name} -r -m -u 188 %{name} 2>/dev/null
 
 %prep
 #%setup -q
